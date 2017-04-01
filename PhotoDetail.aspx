@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="TitleDetail.aspx.cs" Inherits="DataControls_TitleDetail" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PhotoDetail.aspx.cs" Inherits="~PhotoDetail" %>
 
 <!DOCTYPE html>
 
@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Pubs %>" SelectCommand="SELECT [title_id], [title], [type], [pub_id], [price], [advance], [royalty], [ytd_sales], [notes], [pubdate] FROM [titles] WHERE ([title_id] = @title_id)">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings: %>" SelectCommand="SELECT [title_id], [title], [type], [pub_id], [price], [advance], [royalty], [ytd_sales], [notes], [pubdate] FROM [titles] WHERE ([title_id] = @title_id)">
             <SelectParameters>
                 <asp:QueryStringParameter Name="title_id" QueryStringField="id" Type="String" />
             </SelectParameters>
