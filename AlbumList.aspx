@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AlbumList.aspx.cs" Inherits="~AlbumList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AlbumList.aspx.cs" Inherits="AlbumList" %>
 
 <!DOCTYPE html>
 
