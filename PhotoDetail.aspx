@@ -1,138 +1,93 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PhotoDetail.aspx.cs" Inherits="~PhotoDetail" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PhotoDetail.aspx.cs" MasterPageFile="~/MasterPage.master" Inherits="InClassExersice_ustora_ProductDetail" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentBanner" runat="Server">
+    <section id="banner"></section>
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings: %>" SelectCommand="SELECT [title_id], [title], [type], [pub_id], [price], [advance], [royalty], [ytd_sales], [notes], [pubdate] FROM [titles] WHERE ([title_id] = @title_id)">
-            <SelectParameters>
-                <asp:QueryStringParameter Name="title_id" QueryStringField="id" Type="String" />
-            </SelectParameters>
-        </asp:SqlDataSource>
-        <br />
-        <asp:FormView ID="FormView1" runat="server" CellPadding="4" DataKeyNames="title_id" DataSourceID="SqlDataSource1" ForeColor="#333333">
-            <EditItemTemplate>
-                title_id:
-                <asp:Label ID="title_idLabel1" runat="server" Text='<%# Eval("title_id") %>' />
-                <br />
-                title:
-                <asp:TextBox ID="titleTextBox" runat="server" Text='<%# Bind("title") %>' />
-                <br />
-                type:
-                <asp:TextBox ID="typeTextBox" runat="server" Text='<%# Bind("type") %>' />
-                <br />
-                pub_id:
-                <asp:TextBox ID="pub_idTextBox" runat="server" Text='<%# Bind("pub_id") %>' />
-                <br />
-                price:
-                <asp:TextBox ID="priceTextBox" runat="server" Text='<%# Bind("price") %>' />
-                <br />
-                advance:
-                <asp:TextBox ID="advanceTextBox" runat="server" Text='<%# Bind("advance") %>' />
-                <br />
-                royalty:
-                <asp:TextBox ID="royaltyTextBox" runat="server" Text='<%# Bind("royalty") %>' />
-                <br />
-                ytd_sales:
-                <asp:TextBox ID="ytd_salesTextBox" runat="server" Text='<%# Bind("ytd_sales") %>' />
-                <br />
-                notes:
-                <asp:TextBox ID="notesTextBox" runat="server" Text='<%# Bind("notes") %>' />
-                <br />
-                pubdate:
-                <asp:TextBox ID="pubdateTextBox" runat="server" Text='<%# Bind("pubdate") %>' />
-                <br />
-                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
-                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-            </EditItemTemplate>
-            <EditRowStyle BackColor="#999999" />
-            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-            <InsertItemTemplate>
-                title_id:
-                <asp:TextBox ID="title_idTextBox" runat="server" Text='<%# Bind("title_id") %>' />
-                <br />
-                title:
-                <asp:TextBox ID="titleTextBox" runat="server" Text='<%# Bind("title") %>' />
-                <br />
-                type:
-                <asp:TextBox ID="typeTextBox" runat="server" Text='<%# Bind("type") %>' />
-                <br />
-                pub_id:
-                <asp:TextBox ID="pub_idTextBox" runat="server" Text='<%# Bind("pub_id") %>' />
-                <br />
-                price:
-                <asp:TextBox ID="priceTextBox" runat="server" Text='<%# Bind("price") %>' />
-                <br />
-                advance:
-                <asp:TextBox ID="advanceTextBox" runat="server" Text='<%# Bind("advance") %>' />
-                <br />
-                royalty:
-                <asp:TextBox ID="royaltyTextBox" runat="server" Text='<%# Bind("royalty") %>' />
-                <br />
-                ytd_sales:
-                <asp:TextBox ID="ytd_salesTextBox" runat="server" Text='<%# Bind("ytd_sales") %>' />
-                <br />
-                notes:
-                <asp:TextBox ID="notesTextBox" runat="server" Text='<%# Bind("notes") %>' />
-                <br />
-                pubdate:
-                <asp:TextBox ID="pubdateTextBox" runat="server" Text='<%# Bind("pubdate") %>' />
-                <br />
-                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
-                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-            </InsertItemTemplate>
-            <ItemTemplate>
-                <table>
-                    <tr>
-                        <td>
-                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("title_id", "Images/{0}.jpg") %>' /></td>
-                        <td> title_id:
-                <asp:Label ID="title_idLabel" runat="server" Text='<%# Eval("title_id") %>' />
-                <br />
-                title:
-                <asp:Label ID="titleLabel" runat="server" Text='<%# Bind("title") %>' />
-                <br />
-                type:
-                <asp:Label ID="typeLabel" runat="server" Text='<%# Bind("type") %>' />
-                <br />
-                pub_id:
-                <asp:Label ID="pub_idLabel" runat="server" Text='<%# Bind("pub_id") %>' />
-                <br />
-                price:
-                <asp:Label ID="priceLabel" runat="server" Text='<%# Bind("price") %>' />
-                <br />
-                advance:
-                <asp:Label ID="advanceLabel" runat="server" Text='<%# Bind("advance") %>' />
-                <br />
-                royalty:
-                <asp:Label ID="royaltyLabel" runat="server" Text='<%# Bind("royalty") %>' />
-                <br />
-                ytd_sales:
-                <asp:Label ID="ytd_salesLabel" runat="server" Text='<%# Bind("ytd_sales") %>' />
-                <br />
-                notes:
-                <asp:Label ID="notesLabel" runat="server" Text='<%# Bind("notes") %>' />
-                <br />
-                pubdate:
-                <asp:Label ID="pubdateLabel" runat="server" Text='<%# Bind("pubdate") %>' />
-                <br /></td>
-                    </tr>
-                </table>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentBody" Runat="Server"> 
+        <H1>Photo Albums</H1>
+        <hr />
+    <div class="single-product-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [PhotoID], [PhotoName], [AlbumID] FROM [PHOTO] WHERE ([PhotoID] = @PhotoID)">
+                        <SelectParameters>
+                            <asp:QueryStringParameter Name="PhotoID" QueryStringField="id" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+                    <asp:FormView ID="FormView1" runat="server" DataKeyNames="PhotoID" DataSourceID="SqlDataSource1">
+                        <ItemTemplate>
+                            <asp:HiddenField ID="phID" runat="server" Value='<%# Eval("PhotoID") %>' />
+                            <asp:HiddenField ID="phName" runat="server" Value='<%# Eval("PhotoName") %>' />
+                         <div class="product-content-right"></div>
+                           <div class="row">
+                            <div class="col-sm-6">
+                                <div class="product-images">
+                                    <div class="product-main-img">
+                                        <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("PhotoName", "~/Client_Images/{0}.jpg") %>' Height="50%" Width="50%" />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6">
+                                <div class="product-inner">
+                                    <h2 class="product-name"><%# Eval("PhotoName") %></h2>
+                                    <div class="product-inner-price">
+                                        <ins>$50.00</ins>
+                                        <%--<ins><%# Eval("price", "{0:c}") %></ins>--%>
+                                    </div>    
+                                        <div class="quantity">
+                                            <asp:TextBox ID="TxtQty" runat="server" TextMode="Number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1"></asp:TextBox>
+                                        </div>
+                                        <asp:Button cssClass="add_to_cart_button" ID="btnAddToCart" runat="server" Text="Add to Cart" ></asp:Button>  
+                                    <div class="product-inner-category">
+                                    <%--<p>Album: <%# Eval("AlbumName") %></p>--%>
+                                    </div>
+                                    
+                                    <div role="tabpanel">
+                                        <ul class="product-tab" role="tablist">
+                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
+                                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Reviews</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                                <h2>Product Description</h2>  
+                                                <%--<p><%# Eval("notes") %></p>--%>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="profile">
+                                                <h2>Reviews</h2>
+                                                <div class="submit-review">
+                                                    <p><label for="name">Name</label> <input name="name" type="text"></p>
+                                                    <p><label for="email">Email</label> <input name="email" type="email"></p>
+                                                    <div class="rating-chooser">
+                                                        <p>Your rating</p>
 
-            </ItemTemplate>
-            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-        </asp:FormView>
-
-        <a href="TitleList.aspx">Back to Titles</a>
-
-    </div>
-    </form>
-</body>
-</html>
+                                                        <div class="rating-wrap-post">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                    <p><label for="review">Your review</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
+                                                    <p><input type="submit" value="Submit"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        </ItemTemplate>
+                    </asp:FormView>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+ </asp:Content>

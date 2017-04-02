@@ -32,7 +32,7 @@
                             <asp:HiddenField ID="phName" runat="server" Value='<%# Eval("PhotoName") %>' />
                             <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("PhotoName", "~/Client_Images/{0}.jpg") %>' Height="200px" Width="200px" />
                         </div>
-                        <h2><a href='ProductDetail.aspx?id=<%# Eval("PhotoID") %>'><%# Eval("PhotoName") %></a></h2>
+                        <h2><a href='PhotoDetail.aspx?id=<%# Eval("PhotoID") %>'><%# Eval("PhotoName") %></a></h2>
                         <div class="product-carousel-price">
                             <ins>$50.00</ins>
                             <%--<ins><%# Eval("price", "{0:c}") %></ins>--%>
