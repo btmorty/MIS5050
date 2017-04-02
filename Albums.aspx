@@ -1,11 +1,13 @@
-﻿<%@ Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Albums.aspx.cs" Inherits="Albums" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Albums.aspx.cs" Inherits="ChangeMaster" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentBanner" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentBanner" runat="Server">
+    <section id="banner"></section>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentBody" Runat="Server">
 <h1>Photo Albums</h1>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [User Name] AS User_Name, [Album ID] AS Album_ID, [Album Name] AS Album_Name FROM [ALBUM]"></asp:SqlDataSource>
     <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="ListView1_SelectedIndexChanged">
             <LayoutTemplate>
                 <div class="container">
@@ -29,7 +31,6 @@
                         </div>  
                         <div class="product-option-shop">
                             <asp:LinkButton cssClass="add_to_cart_button" CommandName="Select" ID="LinkButton1" runat="server" Text="Add to Cart" ></asp:LinkButton>
-                            <%--<a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>--%>
                         </div>                       
                     </div>
                 </div>
