@@ -13,7 +13,7 @@
         <div class="zigzag-bottom"></div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [PhotoID], [PhotoName] FROM [PHOTO] WHERE ([AlbumID] = @AlbumID)">
             <SelectParameters>
-                <asp:QueryStringParameter Name="AlbumID" QueryStringField="?alb=" />
+                <asp:QueryStringParameter Name="AlbumID" QueryStringField="alb" />
             </SelectParameters>
         </asp:SqlDataSource>
         <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="ListView1_SelectedIndexChanged">
@@ -30,7 +30,7 @@
                         <div class="product-upper">
                             <asp:HiddenField ID="phID" runat="server" Value='<%# Eval("PhotoID") %>' />
                             <asp:HiddenField ID="phName" runat="server" Value='<%# Eval("PhotoName") %>' />
-                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("PhotoName", "~/Client_Images/{0}.jpg") %>' />
+                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("PhotoName", "~/Client_Images/{0}.jpg") %>' Height="200px" Width="200px" />
                         </div>
                         <h2><a href='ProductDetail.aspx?id=<%# Eval("PhotoID") %>'><%# Eval("PhotoName") %></a></h2>
                         <div class="product-carousel-price">
