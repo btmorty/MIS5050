@@ -9,7 +9,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentBody" Runat="Server">    
     <div class="single-product-area">
         <div class="zigzag-bottom"></div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Ablums %>" SelectCommand="SELECT DISTINCT [Album Name] FROM [ALBUM]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [AlbumName], AlbumID FROM [ALBUM]"></asp:SqlDataSource>
         <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="ListView1_SelectedIndexChanged">
             <LayoutTemplate>
                 <div class="container">
@@ -22,9 +22,9 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("type", "Client_Images/{0}.jpg") %>' />
+                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("AlbumThumb", "Client_Images/{0}.jpg") %>' />
                         </div>
-                        <h2><a href='CatProducts.aspx?cat=<%# Eval("type") %>'><%# Eval("type") %></a></h2>
+                        <h2><a href='CatProducts.aspx?cat=<%# Eval("AlbumID") %>'><%# Eval("AlbumID") %></a></h2>
                         <div class="product-carousel-price">
                         </div>  
                         <div class="product-option-shop">
