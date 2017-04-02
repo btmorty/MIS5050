@@ -1,28 +1,19 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="ustora.master" CodeFile="CatProducts.aspx.cs" Inherits="InClassExersice_ustora_Products" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPage.master" CodeFile="CatProducts.aspx.cs" Inherits="InClassExersice_ustora_Products" %>
 
-<asp:Content runat="server" ID="Content2" ContentPlaceHolderID="cphHead">
-    <title>Ustora Products</title>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentBanner" runat="Server">
+    <section id="banner"></section>
 </asp:Content>
 
-<asp:Content runat="server" ID="Content1" ContentPlaceHolderID="cphBody">
-    <div class="product-big-title-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="product-bit-title text-center">
-                        <h2>Shop</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentBody" Runat="Server"> 
+        <H1>Photo Albums</H1>
+        <hr />
     <div class="single-product-area">
         <div class="zigzag-bottom"></div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Pubs %>" SelectCommand="SELECT [title_id], [title], [price] FROM [titles] WHERE ([type] = @type)">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [PhotoID], [PhotoName] FROM [PHOTO] WHERE ([AlbumID] = @AlbumID)">
             <SelectParameters>
-                <asp:QueryStringParameter Name="type" QueryStringField="cat" Type="String" />
+                <asp:QueryStringParameter Name="AlbumID" QueryStringField="?" />
             </SelectParameters>
         </asp:SqlDataSource>
         <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="ListView1_SelectedIndexChanged">
