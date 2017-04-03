@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Cart.aspx.cs" MasterPageFile="~/MasterPage.master" Inherits="InClassExersice_ustora_Cart" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Cart.aspx.cs" MasterPageFile="../Client/MasterPage2.master" Inherits="InClassExersice_ustora_Cart" %>
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="Server">
@@ -77,29 +77,29 @@
                         </ItemTemplate>
                     </asp:ListView>
 
-
                     <div class="cart-collaterals">
                         <div class="cart_totals ">
                             <h2>Cart Totals</h2>
+                                <div class="col-xs-1" align="center">
+                                    <table border="1" cellpadding="2">
+                                        <tbody>
+                                            <tr>
+                                                <th align="left">Cart Subtotal</th>
+                                                <td align="left"><span class="amount">$00.00</span></td>
+                                            </tr>
 
-                            <table cellspacing="0">
-                                <tbody>
-                                    <tr class="cart-subtotal">
-                                        <th>Cart Subtotal</th>
-                                        <td><span class="amount">£15.00</span></td>
-                                    </tr>
+                                            <tr>
+                                                <th align="left">Shipping and Handling</th>
+                                                <td align="left">Free Shipping</td>
+                                            </tr>
 
-                                    <tr class="shipping">
-                                        <th>Shipping and Handling</th>
-                                        <td>Free Shipping</td>
-                                    </tr>
-
-                                    <tr class="order-total">
-                                        <th>Order Total</th>
-                                        <td><strong><span class="amount">£15.00</span></strong> </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                            <tr>
+                                                <th align="left">Order Total</th>
+                                                <td align="left"><strong><span class="amount">$00.00</span></strong> </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                         </div>
                     </div>
                 </div>
