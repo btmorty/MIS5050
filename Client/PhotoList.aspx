@@ -38,7 +38,7 @@
                             <%--<ins><%# Eval("price", "{0:c}") %></ins>--%>
                         </div>  
                         <div class="product-option-shop">
-                            <asp:LinkButton cssClass="add_to_cart_button" CommandName="Select" ID="LinkButton1" runat="server" Text="Add to Cart" ></asp:LinkButton>
+                            <asp:Button CommandName="Select" ID="LinkButton1" runat="server" Text="Add to Cart" ></asp:Button>
                         </div>                       
                     </div>
                 </div>
