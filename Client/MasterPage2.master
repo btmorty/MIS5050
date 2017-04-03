@@ -28,13 +28,13 @@
     <form id="form1" runat="server">
         <!-- Header Static-->
         <header id="header">
-            <h1><a href="Membership/Welcome.aspx">CI Photo Studio</a></h1>
+            <h1><a href="../home.aspx">Contagious Intelligence</a></h1>
             <nav id="nav">
                 <ul>
                     <li><a href="Profile.aspx">Profile</a></li>
-                    <li><a href="AlbumList.aspx">Albums</a></li>
+                    <li><a href="PhotoAlbums.aspx">Albums</a></li>
                     <li><a href="Cart.aspx">Cart</a></li>
-                    <li><asp:LoginStatus ID="LoginStatus1" runat="server" LogoutPageUrl="~/home.aspx"/></li>
+                    <li><asp:LoginStatus ID="LoginStatus1" runat="server" LogoutPageUrl="../home.aspx"/></li>
                 </ul>
             </nav>
             <asp:ContentPlaceHolder ID="head" runat="server">
