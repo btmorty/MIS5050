@@ -7,7 +7,7 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentBody" Runat="Server"> 
-        <H1>Photo Albums</H1>
+        <H1>Photos</H1>
         <hr />
     <div class="single-product-area">
         <div class="zigzag-bottom"></div>
@@ -30,7 +30,7 @@
                         <div class="product-upper">
                             <asp:HiddenField ID="phID" runat="server" Value='<%# Eval("PhotoID") %>' />
                             <asp:HiddenField ID="phName" runat="server" Value='<%# Eval("PhotoName") %>' />
-                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("PhotoName", "~/Client_Images/{0}.jpg") %>' Height="200px" Width="200px" />
+                            <a href='PhotoDetail.aspx?id=<%# Eval("PhotoID") %>'><asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("PhotoName", "~/Client_Images/{0}.jpg") %>' Height="200px" Width="200px" />
                         </div>
                         <h2><a href='PhotoDetail.aspx?id=<%# Eval("PhotoID") %>'><%# Eval("PhotoName") %></a></h2>
                         <div class="product-carousel-price">

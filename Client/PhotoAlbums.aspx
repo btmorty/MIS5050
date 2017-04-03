@@ -9,7 +9,6 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentBody" Runat="Server">    
         <H1>Photo Albums</H1>
         <hr />
-    <div class="single-product-area">
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT DISTINCT [AlbumName], AlbumID, AlbumThumb FROM [ALBUM]"></asp:SqlDataSource>
         <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1">
             <LayoutTemplate>
@@ -34,5 +33,4 @@
                 </div>
             </ItemTemplate>
         </asp:ListView>
-    </div>
 </asp:Content>
