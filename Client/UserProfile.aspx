@@ -1,14 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="UserProfile.aspx.cs" Inherits="Client_UserProfile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Client/MasterPage2.master" CodeFile="UserProfile.aspx.cs" Inherits="Client_UserProfile" %>
 
 <%@ Register src="CurrentUserInfo.ascx" tagname="CurrentUserInfo" tagprefix="uc1" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentBanner" runat="Server">
+    <section id="banner"></section>
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentBody" Runat="Server">
     <form id="form1" runat="server">
     <div>
     
@@ -16,5 +16,4 @@
     
     </div>
     </form>
-</body>
-</html>
+</asp:Content>

@@ -1,21 +1,21 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Admin.aspx.cs" MaintainScrollPositionOnPostback="true" Inherits="Membership_Admin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Admin.aspx.cs" MasterPageFile="~/Client/MasterPage2.master" MaintainScrollPositionOnPostback="true" Inherits="Membership_Admin" %>
 
 <%@ Register src="CurrentUserInfo.ascx" tagname="CurrentUserInfo" tagprefix="uc1" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentBanner" runat="Server">
+    <section id="banner"></section>
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentBody" Runat="Server">
     <form id="form1" runat="server">
     <div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
         <uc1:CurrentUserInfo ID="CurrentUserInfo1" runat="server" />
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:MembershipDB %>" SelectCommand="SELECT [UserName], [Email], [LastLoginDate], [LastActivityDate], [IsApproved] FROM [vw_aspnet_MembershipUsers]"></asp:SqlDataSource>
             <h3>View Application Users</h3>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDataBound="GridView1_RowDataBound" OnRowEditing="GridView1_RowEditing" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowUpdating="GridView1_RowUpdating" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AllowPaging="True" AllowSorting="True" CellPadding="4" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDataBound="GridView1_RowDataBound" OnRowEditing="GridView1_RowEditing" OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowUpdating="GridView1_RowUpdating" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AllowPaging="True" AllowSorting="True" CellPadding="4" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Width="1061px">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="UserName" HeaderText="UserName" SortExpression="UserName" />
@@ -76,5 +76,4 @@
         </asp:Panel>
     </div>
     </form>
-</body>
-</html>
+</asp:Content>

@@ -28,7 +28,7 @@
     <form id="form1" runat="server">
         <!-- Header Static-->
         <header id="header">
-            <h1><a href="Membership/Welcome.aspx">Contagious Intelligence</a></h1>
+            <h1><a href="Membership/Welcome.aspx">CI Photo Studio</a></h1>
             <nav id="nav">
                 <ul>
                     <li><a href="Profile.aspx">Profile</a></li>
