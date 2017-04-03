@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPage.master" CodeFile="PhotoAlbums.aspx.cs" Inherits="Catagory" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Client/MasterPage2.master" CodeFile="PhotoAlbums.aspx.cs" Inherits="Catagory" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -23,7 +23,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <a href='PhotoList.aspx?alb=<%# Eval("AlbumID") %>'><asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("AlbumThumb", "Client_Images/{0}.jpg") %>' Height="200px" Width="200px" />
+                            <a href='PhotoList.aspx?alb=<%# Eval("AlbumID") %>'><asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("AlbumThumb", "~/Client_Images/{0}.jpg") %>' Height="200px" Width="200px" />
                             </div>
                         <h2><a href='PhotoList.aspx?alb=<%# Eval("AlbumID") %>'><%# Eval("AlbumName") %></a></h2>
                         <div class="product-carousel-price">
