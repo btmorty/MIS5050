@@ -28,7 +28,7 @@
                 <asp:RoleGroup Roles="User">
                     <ContentTemplate>
                         <ul>
-                            <li><a href="User.aspx">User.aspx</a></li>
+                            <li><a href="UserProfile.aspx">User.aspx</a></li>
                             <li><asp:LoginStatus ID="LoginStatus2" runat="server" /></li>
                         </ul>
                     </ContentTemplate>
