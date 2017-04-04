@@ -65,7 +65,7 @@ public partial class Membership_Admin : System.Web.UI.Page
 
     protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
     {
-        //retrieve the username of the user being updated fromt eh DataKeys collection
+        //retrieve the username of the user being updated from the DataKeys collection
         string username = GridView1.DataKeys[e.RowIndex].Value.ToString();
 
         //retrieve the checkbox

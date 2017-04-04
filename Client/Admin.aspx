@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Admin.aspx.cs" MasterPageFile="~/Client/MasterPage2.master" MaintainScrollPositionOnPostback="true" Inherits="Membership_Admin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Admin.aspx.cs" MasterPageFile="MasterPage2.master" MaintainScrollPositionOnPostback="true" Inherits="Membership_Admin" %>
 
 <%@ Register src="CurrentUserInfo.ascx" tagname="CurrentUserInfo" tagprefix="uc1" %>
 
@@ -9,7 +9,7 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentBody" Runat="Server">
-    <form id="form1" runat="server">
+
     <div>
         <uc1:CurrentUserInfo ID="CurrentUserInfo1" runat="server" />
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:MembershipDB %>" SelectCommand="SELECT [UserName], [Email], [LastLoginDate], [LastActivityDate], [IsApproved] FROM [vw_aspnet_MembershipUsers]"></asp:SqlDataSource>
@@ -79,5 +79,5 @@
 </table>
         </asp:Panel>
     </div>
-    </form>
+
 </asp:Content>

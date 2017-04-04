@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Client/MasterPage2.master" CodeFile="UserProfile.aspx.cs" Inherits="Client_UserProfile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="MasterPage2.master" CodeFile="UserProfile.aspx.cs" Inherits="Client_UserProfile" %>
 
 <%@ Register src="CurrentUserInfo.ascx" tagname="CurrentUserInfo" tagprefix="uc1" %>
 
@@ -9,11 +9,11 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentBody" Runat="Server">
-    <form id="form1" runat="server">
+    
     <div>
     
         <uc1:CurrentUserInfo ID="CurrentUserInfo1" runat="server" />
     
     </div>
-    </form>
+    
 </asp:Content>
