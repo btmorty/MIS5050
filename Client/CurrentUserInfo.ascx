@@ -13,7 +13,6 @@
     <TitleTextStyle BackColor="#5D7B9D" Font-Bold="True" Font-Size="0.9em" ForeColor="White" />
 </asp:ChangePassword>
 
-<asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
 <h3>View/Edit your Profile Data</h3>
 <table>
     <tr>
