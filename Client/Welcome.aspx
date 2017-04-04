@@ -1,17 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Welcome.aspx.cs" Inherits="Membership_Welcome" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="MasterPage2.master" CodeFile="Welcome.aspx.cs" Inherits="Membership_Welcome" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentBanner" runat="Server">
+    <section id="banner"></section>
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentBody" Runat="Server">
     <div>
         <asp:LoginView ID="LoginView1" runat="server">
             <AnonymousTemplate>
-                <h2>You are not Loged in. Please log in <asp:LoginStatus ID="LoginStatus1" runat="server" LoginText="here." /></h2>
+                <h2>You are not Logged in. Please log in <asp:LoginStatus ID="LoginStatus1" runat="server" LoginText="here." /></h2>
             </AnonymousTemplate>
             <LoggedInTemplate>
                 Authenticated
@@ -21,7 +20,7 @@
                     <ContentTemplate>
                         <ul>
                             <li><a href="Admin.aspx">Admin.aspx</a></li>
-                            <li><a href="User.aspx">User.aspx</a></li>
+                            <li><a href="UserProfile.aspx">User.aspx</a></li>
                             <li><asp:LoginStatus ID="LoginStatus2" runat="server" /></li>
                         </ul>
                     </ContentTemplate>
@@ -37,6 +36,4 @@
             </RoleGroups>
         </asp:LoginView>
     </div>
-    </form>
-</body>
-</html>
+</asp:Content>
