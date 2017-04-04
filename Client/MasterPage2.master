@@ -34,7 +34,7 @@
                     <li><a href="UserProfile.aspx">Profile</a></li>
                     <li><a href="PhotoAlbums.aspx">Albums</a></li>
                     <li><a href="Cart.aspx">Cart</a></li>
-                    <li><asp:LoginStatus ID="LoginStatus1" runat="server" LogoutPageUrl="../home.aspx"/></li>
+                    <li><asp:LoginStatus ID="LoginStatus1" runat="server" LogoutPageUrl="~/Login.aspx"/></li>
                 </ul>
             </nav>
             <asp:ContentPlaceHolder ID="head" runat="server">
