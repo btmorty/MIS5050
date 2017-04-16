@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Client/MasterPage2.master" CodeFile="PhotoList.aspx.cs" Inherits="InClassExersice_ustora_Products" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="MasterPage2.master" CodeFile="PhotoList.aspx.cs" Inherits="InClassExersice_ustora_Products" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
